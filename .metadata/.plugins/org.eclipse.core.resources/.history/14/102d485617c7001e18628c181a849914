@@ -1,0 +1,7 @@
+package com.example.RegisterLogin.impl;
+
+import com.example.RegisterLogin.service.IuserService;
+
+public class userImplement implements IuserService {
+
+}

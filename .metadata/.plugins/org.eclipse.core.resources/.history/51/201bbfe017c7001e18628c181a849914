@@ -1,0 +1,12 @@
+package com.example.RegisterLogin.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+//import com.springboot.model.Registration;
+import com.springboot.model.User;
+//import com.springboot.model.User;
+
+public interface userRepo extends JpaRepository<User, Long> {
+    // Custom queries if needed
+}
+

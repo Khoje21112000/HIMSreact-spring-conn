@@ -1,0 +1,24 @@
+package com.example.RegisterLogin.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.RegisterLogin.dto.userDto;
+import com.example.RegisterLogin.service.IuserService;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/api/user")
+public class userController {
+	
+	@Autowired
+	private IuserService userserviceref;
+	
+	public String saveUser(@RequestBody userDto user) {
+		String id=
+	}
+
+}

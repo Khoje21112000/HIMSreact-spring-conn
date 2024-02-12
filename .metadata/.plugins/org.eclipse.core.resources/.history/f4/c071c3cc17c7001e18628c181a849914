@@ -1,0 +1,6 @@
+package com.example.RegisterLogin.repo;
+
+
+public class userRepo extends JpaRepository {
+
+}

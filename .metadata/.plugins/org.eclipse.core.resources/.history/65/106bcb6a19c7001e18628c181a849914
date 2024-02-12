@@ -1,0 +1,27 @@
+package com.example.RegisterLogin.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.RegisterLogin.dto.userDto;
+import com.example.RegisterLogin.repo.userRepo;
+import com.example.RegisterLogin.service.IuserService;
+
+public class userImplement implements IuserService {
+	
+	@Autowired
+	private userRepo userreporef;
+
+	@Override
+	public String addUser(userDto userdto) {
+		
+		userDto userd=new userDto(
+				userdto.getId(),
+				userdto.getEmail(),
+				userdto.passwordEncoder.encode(userdto.getPassword());
+		);
+		userreporef.save(userd);
+		
+		return userd.getEmail();
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.example.RegisterLogin.impl;
+
+import com.example.RegisterLogin.dto.userDto;
+import com.example.RegisterLogin.repo.userRepo;
+import com.example.RegisterLogin.service.IuserService;
+
+public class userImplement implements IuserService {
+	
+	private userRepo userreporef;
+
+	@Override
+	public String addUser(userDto userdto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.example.RegisterLogin.repo;
+
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+@EnableJpaRepositories
+@Repository
+public class userRepo {
+
+}

@@ -1,0 +1,88 @@
+package com.springboot.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.springboot.dto.ErrorResponse;
+import com.springboot.jparepository.UserRepository;
+import com.springboot.model.Registration;
+import com.springboot.model.User;
+import com.springboot.service.IUserService;
+
+@CrossOrigin("*")
+@RestController
+@RequestMapping("/api/user")
+public class UserController {
+    @Autowired
+    private IUserService userService;
+
+    
+ 
+    @PostMapping("/add")
+//    public User createUser(@RequestBody User user) {
+//    	System.out.println(user);
+//        return userRepository.save(user);
+//    }
+    
+    public ResponseEntity<?> registUser(@RequestBody User user){
+		try {
+			User dbUser=userService.adduser(user);
+			return new ResponseEntity<>(dbUser,HttpStatus.OK);
+		}
+		catch(Exception e) {
+			return new ResponseEntity<>(new ErrorResponse("USER REGISTRATION FAILED..", e.getMessage()),HttpStatus.BAD_REQUEST);
+		}
+	}
+    
+    
+ // http://localhost:8087/user/getusers
+ 	@GetMapping("/getusers")
+ 	public List<User> fetchuser() {
+ 		return userService.getAllusers();
+ 	}
+ 	// http://localhost:8087/user/findUser/1
+ 	@GetMapping("/findUser/{id}")
+ 	public User getUserById(@PathVariable int id) {
+ 		return userService.getuser(id);
+ 	}
+ 	
+ 	// http://localhost:8087/user/delete/3
+ 	@DeleteMapping("/delete/{id}")
+ 	public String deleteById(@PathVariable int id) {
+ 		return userService.deleteUser(id);
+ 	}
+ 	// http://localhost:8087/user/update/2
+ 	@PutMapping("/update/{id}")
+ 	public  User updateById(@RequestBody User updateUser, @PathVariable int id) {
+ 		User oldUser=userService.getuser(id);
+ 		return userService.updateUser(updateUser, oldUser);
+ 	
+ 		
+ 	}
+    
+//    @GetMapping
+//    public List<Registration> getAllRegisterUser(){
+//    	return userRepository.findAll();
+//    }
+//    
+//	@PostMapping
+//	public Registration createUser(@RequestBody Registration register) {
+//		System.out.println(register);
+//		return userRepository.save(register);
+//	}
+//    
+}
+ 

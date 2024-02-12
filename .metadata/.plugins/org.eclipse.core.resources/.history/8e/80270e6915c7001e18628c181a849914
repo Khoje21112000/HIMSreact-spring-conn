@@ -1,0 +1,17 @@
+package com.example.RegisterLogin.dto;
+
+public class userDto {
+	private Long id;
+	private String email;
+	private String password;
+	
+	public userDto(Long id, String email, String password) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+	}
+	
+	
+
+}

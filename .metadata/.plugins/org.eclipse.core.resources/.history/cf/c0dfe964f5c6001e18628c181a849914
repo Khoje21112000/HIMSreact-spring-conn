@@ -1,0 +1,9 @@
+package com.springboot.customexception;
+
+public class  extends RuntimeException{
+	
+	public UserHandlingException(String msg) {
+		super(msg);
+	}
+
+}

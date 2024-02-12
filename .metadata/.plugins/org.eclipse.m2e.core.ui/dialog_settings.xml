@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\ProjectbyJarvis\springboot"/>
+			<item value="D:\FarmSenseProject\FarmSense\farm_sense backend"/>
+			<item value="D:\Demo_CRUD\DemoLoginGitHub\spring-boot-react-mysql\spring-boot-server"/>
+			<item value="D:\Demo_CRUD\DemoLoginGitHub\spring-boot-login-example"/>
+			<item value="D:\CDAC_HIMS_Project\SpringRestLab"/>
+			<item value="D:\CDAC_HIMS_Project\RegisterLogin"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

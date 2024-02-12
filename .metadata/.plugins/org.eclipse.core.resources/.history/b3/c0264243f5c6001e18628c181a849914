@@ -1,0 +1,5 @@
+package com.springboot.customexception;
+
+public class UserHandlingException {
+
+}
